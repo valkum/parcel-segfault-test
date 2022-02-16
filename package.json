@@ -1,0 +1,16 @@
+{
+  "name": "monorepo",
+  "version": "0.1.0",
+  "description": "Monorepo",
+  "private": true,
+  "scripts": {
+    "build:libs": "yarn workspaces foreach -vptR --from 'i18next-fluent' run build"
+  },
+  "devDependencies": {
+    "typescript": "~4.4.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@3.1.1"
+}

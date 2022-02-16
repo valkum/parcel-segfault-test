@@ -1,0 +1,72 @@
+{
+  "name": "fluent_conv",
+  "version": "1.0.0",
+  "description": "Updated fluent2js and js2fluent converter",
+  "source": "lib/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "dependencies": {
+    "@fluent/syntax": "0.18.0"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.2.1",
+    "@parcel/transformer-typescript-types": "^2.2.1",
+    "@swc/core": "^1.2.135",
+    "@swc/jest": "^0.2.17",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.4.7",
+    "parcel": "^2.2.1"
+  },
+  "scripts": {
+    "lint": "eslint lib/ --ext .js,.jsx,.ts,.tsx",
+    "lint:tests": "eslint test/ --ext .js,.jsx,.ts,.tsx",
+    "watch": "parcel watch --no-hmr",
+    "build": "parcel build",
+    "test": "yarn lint && yarn build && yarn jest"
+  },
+  "keywords": [
+    "fluent",
+    "projectfluent",
+    "json",
+    "js",
+    "translation",
+    "converter"
+  ],
+  "author": "jamuhl",
+  "license": "MIT",
+  "contributors": [
+    "Rudi Floren <r.floren@heinlein-video.de>"
+  ],
+  "files": [
+    "lib/**"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": [
+        "@swc/jest"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
